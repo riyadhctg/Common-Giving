@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<widget xmlns   = "http://www.w3.org/ns/widgets"
+    xmlns:gap   = "http://phonegap.com/ns/1.0"
+    id          = "com.phonegap.example"
+    versionCode = "10"
+    version     = "1.0.0" >
+
+<!-- versionCode is optional and Android only -->
+
+  <name>Common Giving</name>
+
+  <description>
+      Common Giving beta app for Orphan Outreach
+
+      More features are to be added soon. Stay tuned!
+  </description>
+
+  <author href="http://commongiving.org/" email="commongiving@gmail.com">
+      Common Giving Labs
+  </author>
+  
+    <!-- Plugins -->
+
+    <!-- Core plugins -->
+
+    <plugin name="org.apache.cordova.inappbrowser" source="pgb" spec="0.6.0" />
+
+    <icon src="assets/cg-icon.png"/>
+
+</widget>

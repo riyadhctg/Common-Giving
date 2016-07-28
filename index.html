@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html ng-app="ionicApp">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>Common Giving</title>
+    <link href="ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/customcss.css" rel="stylesheet">
+    <link href="css/normalize.css" rel="stylesheet">
+    <script src="ionic/js/ionic.bundle.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="phonegap.js"></script>
+
+    <script>
+        //To open external URLs
+        document.addEventListener("deviceready", onDeviceReady, false);
+
+        function onDeviceReady() {
+            window.open = cordova.InAppBrowser.open;
+        }
+    </script>
+
+
+    <script>
+        //button action to switch between country groups
+        function buttonAfunc() {
+            document.getElementById("countryNames").innerHTML = "Haiti, Guyana, Kashmir, Sierra Leone";
+            document.getElementById("oneDayA2").innerHTML = "C$1.1";
+            document.getElementById("oneWeekA2").innerHTML = "C$7.5";
+            document.getElementById("oneMonthA2").innerHTML = "C$30";
+            document.getElementById("threeMonthsA2").innerHTML = "C$90";
+            document.getElementById("sixMonthsA2").innerHTML = "C$180";
+            document.getElementById("oneYearA2").innerHTML = "C$360";
+
+        }
+
+        function buttonBfunc() {
+            document.getElementById("countryNames").innerHTML = "India, Afghanistan, Bangladesh, Sri Lanka, Sudan, Yemen, Chechnya, Ethiopia, Kenya, Niger, Somalia, South Africa, Mali";
+            document.getElementById("oneDayA2").innerHTML = "C$1.8";
+            document.getElementById("oneWeekA2").innerHTML = "C$12.5";
+            document.getElementById("oneMonthA2").innerHTML = "C$50";
+            document.getElementById("threeMonthsA2").innerHTML = "C$150";
+            document.getElementById("sixMonthsA2").innerHTML = "C$300";
+            document.getElementById("oneYearA2").innerHTML = "C$600";
+
+        }
+
+        function buttonCfunc() {
+            document.getElementById("countryNames").innerHTML = "Indonesia, Pakistan, Albania, Egypt, Morocco, Tunisia, Syria, Iraq";
+            document.getElementById("oneDayA2").innerHTML = "C$2.1";
+            document.getElementById("oneWeekA2").innerHTML = "C$15";
+            document.getElementById("oneMonthA2").innerHTML = "C$60";
+            document.getElementById("threeMonthsA2").innerHTML = "C$180";
+            document.getElementById("sixMonthsA2").innerHTML = "C$360";
+            document.getElementById("oneYearA2").innerHTML = "C$720";
+
+
+        }
+
+        function buttonDfunc() {
+            document.getElementById("countryNames").innerHTML = "Bosnia, Jordan, Kosovo, Lebanon, Palestine (Gaza, West Bank)";
+            document.getElementById("oneDayA2").innerHTML = "C$2.7";
+            document.getElementById("oneWeekA2").innerHTML = "C$18.75";
+            document.getElementById("oneMonthA2").innerHTML = "C$75";
+            document.getElementById("threeMonthsA2").innerHTML = "C$225";
+            document.getElementById("sixMonthsA2").innerHTML = "C$450";
+            document.getElementById("oneYearA2").innerHTML = "C$900";
+
+        }
+    </script>
+</head>
+
+<body>
+
+
+    <ion-nav-bar class="bar-light noborder">
+        <ion-nav-back-button>
+        </ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-nav-view></ion-nav-view>
+
+    <script id="templates/tabs.html" type="text/ng-template">
+        
+        <ion-tabs class="tabs-icon-top tabs-light noborder tabs-item-hide">
+            <ion-tab title="Participate" icon="ion-android-favorite" href="#/tab/home">
+                <ion-nav-view name="home-tab"></ion-nav-view>
+            </ion-tab>
+        </ion-tabs>
+    </script>
+
+    <script id="templates/home.html" type="text/ng-template">
+        <ion-view hide-nav-bar="true">
+            <ion-content>
+                <div class="row">
+                    <div class="col"></div>
+                    <div class="col-90">
+                        <img class="ccenter" src="assets/cg-banner.png">
+                    </div>
+                    <div class="col"></div>
+                </div>
+
+                <div class="row" style="padding: 0px 0px 0px 0px; background-image: url(assets/front-banner-small.jpg); background-repeat: no-repeat;  background-size:cover; background-position:center; min-height: 230px">
+
+
+                    <a class="button icon  button-energized ccenter" style="width:200px;  z-index: 2;  text-align:center; margin: auto; " href="#/tab/facts2"><b>Help an Orphan</b></a>
+
+                </div>
+
+
+
+
+                <div class="row" style="background-color: #336600;  padding: 20px 20px 20px 20px; color: white; font-size: medium">
+                    <p><b>Common Giving</b> is a platform for anyone willing to empower the under privileged people around the globe. At ‘Common Giving’, we believe every step counts, every little selfless contribution is gigantic.</p>
+                </div>
+
+
+                <div class="row" style="background-color: #669900;  padding: 20px 20px 20px 20px; color: white; font-size: medium">
+
+                    <ionContent>
+                        <div style=" text-align:center; margin: auto;">
+                            <img style="padding-left: 5px; padding-right: 5px" src="assets/osp.png">
+                            <img style="padding-left: 5px; padding-right: 5px" src="assets/nuday.png">
+                            <img style="padding-left: 5px; padding-right: 5px" src="assets/cbet.png">
+                            <img style="padding-left: 5px; padding-right: 5px" src="assets/eutb.png">
+                            <img style="padding-left: 5px; padding-right: 5px" src="assets/ir.png">
+                            <img style="padding-left: 5px; padding-right: 5px" src="assets/loh.png">
+                        </div>
+                    </ionContent>
+                </div>
+
+                <div class="row" style="background-color: #336600;  padding: 20px 20px 20px 20px; color: white; font-size: medium">
+                    <div class="ccenter">
+                        <a href="#" style="color:white" class="button button-icon icon ion-social-facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=http%3A//commongiving.org/orphan.html', '_blank', 'location=yes');"></a>
+                        <a href="#" style="color:white" class="button button-icon icon ion-social-twitter" onclick="window.open('https://twitter.com/home?status=http%3A//commongiving.org/orphan.html', '_self', 'location=yes');"></a>
+                        <a href="#" style="color:white" class="button button-icon icon ion-social-googleplus" onclick="window.open('https://plus.google.com/share?url=http%3A//commongiving.org/orphan.html', '_system', 'location=yes');"></a>
+                    </div>
+                </div>
+
+                <div class="row " style="background-color: #669900;  padding: 20px 20px 20px 20px; color: #E3EDD1">
+                    <div class="ccenter">
+                        <img style="opacity: 0.5" class="ccenter" src="assets/cg-logo.png">
+                        <p style="text-align: center; font-size: small; opacity: 0.5">CommonGiving.org</p>
+                    </div>
+                </div>
+
+            </ion-content>
+        </ion-view>
+    </script>
+    <div>
+        <script id="templates/facts.html" type="text/ng-template"></script>
+        <script id="templates/facts2.html" type="text/ng-template">
+            <ion-view hide-nav-bar="true">
+                <ion-content>
+
+                    <div class="row" style="background-color: #336600;  color: white;">
+                        <div class="ccenter">
+                            <p style="text-align: center;  font-size: medium;">Discover how <b>you</b> can <b>impact</b> lives</p>
+                            <p style="text-align: center; margin-bottom: 0px">Select a country group*:</p>
+                        </div>
+                    </div>
+
+
+                    <div class="row" style="background-color: #336600;">
+                        <div class="button-bar bar-balanced padding">
+                            <a id="buttonA" class="button" ng-click="activeButton = 'a'" ng-class="{ 'active': activeButton === 'a' }" onclick="buttonAfunc()">A</a>
+                            <a id="buttonB" class="button" ng-click="activeButton = 'b'" ng-class="{ 'active': activeButton === 'b' }" onclick="buttonBfunc()">B</a>
+                            <a id="buttonC" class="button" ng-click="activeButton = 'c'" ng-class="{ 'active': activeButton === 'c' }" onclick="buttonCfunc()">C</a>
+                            <a id="buttonD" class="button" ng-click="activeButton = 'd'" ng-class="{ 'active': activeButton === 'd' }" onclick="buttonDfunc()">D</a>
+                        </div>
+
+                    </div>
+
+                    <div class="row" style="background-color: #336600;  ;">
+                        <p class="ccenter" id="countryNames" style="padding-left: 20px; padding-right: 20px; text-align: center;  color: white; font-size: small; opacity: 0.5">Haiti, Guyana, Kashmir, Sierra Leone</p>
+                    </div>
+
+
+
+
+                    <div style="background-color: #669900; padding-top: 20px; padding-bottom: 40px; background-image: url(assets/map2.png); background-repeat: no-repeat; background-size:cover; background-position:center; ">
+                        <ion-slide-box>
+                            <ion-slide>
+                                <div class="box cbox ">
+                                    <p style="text-align: center">
+
+                                        <a style="text-decoration: none;">
+                                            <button style="display: inline; color:white" class="button button-outline button-small button-light ccenter">
+                                                With only
+                                            </button>
+                                        </a>
+                                        <a style="text-decoration: none;">
+                                            <button style="display: inline;" id="oneDayA2" class="button button-small button-light ccenter">
+                                                <b>C$1.1</b>
+                                            </button>
+                                        </a>
+                                    </p>
+                                    <p style="text-align: center">
+                                        <a style="text-decoration: none;">
+                                            <button style="display: inline; color:white" class="button button-outline  button-small button-light ccenter">
+                                                Help an orphan with basic needs for
+                                            </button>
+                                        </a>
+                                    </p>
+                                    <a style="text-decoration: none;">
+                                        <button id="oneDayA1" class="button button-large button-positive ccenter">
+                                            1 Day
+                                        </button>
+                                    </a>
+                                </div>
+                            </ion-slide>
+                            <ion-slide>
+                                <div class="box cbox">
+                                    <p style="text-align: center">
+                                        <a style="text-decoration: none;">
+                                            <button style="display: inline; color:white" class="button button-outline button-small button-light ccenter">
+                                                With only
+                                            </button>
+                                        </a>
+                                        <button style="display: inline;" id="oneWeekA2" class="button button-small button-light ccenter">
+                                            C$7.5
+                                        </button>
+                                    </p>
+                                    <p style="text-align: center">
+                                        <a style="text-decoration: none;">
+                                            <button style="display: inline; color:white" class="button button-outline  button-small button-light ccenter">
+                                                Help an orphan with basic needs for
+                                            </button>
+                                        </a>
+                                    </p>
+                                    <a style="text-decoration: none;">
+                                        <button id="oneWeekA1" class="button button-large button-calm ccenter">
+                                            1 Week
+                                        </button>
+                                    </a>
+
+                                </div>
+                            </ion-slide>
+                            <ion-slide>
+                                <div class="box cbox">
+                                    <p style="text-align: center">
+                                        <a style="text-decoration: none;">
+                                            <button style="display: inline; color:white" class="button button-outline button-small button-light ccenter">
+                                                With only
+                                            </button>
+                                        </a>
+                                        <a style="text-decoration: none;">
+                                            <button style="display: inline;" id="oneMonthA2" class="button button-small button-light ccenter">
+                                                C$30
+                                            </button>
+                                        </a>
+                                    </p>
+                                    <p style="text-align: center">
+                                        <a style="text-decoration: none;">
+                                            <button style="display: inline; color:white" class="button button-outline  button-small button-light ccenter">
+                                                Help an orphan with basic needs for
+                                            </button>
+                                        </a>
+                                    </p>
+                                    <a style="text-decoration: none;">
+                                        <button id="oneMonthA1" class="button button-large button-energized ccenter">
+                                            1 Month
+                                        </button>
+                                    </a>
+
+                                </div>
+                            </ion-slide>
+                            <ion-slide>
+                                <div class="box cbox">
+                                    <p style="text-align: center">
+                                        <a style="text-decoration: none;">
+                                            <button style="display: inline; color:white" class="button button-outline button-small button-light ccenter">
+                                                With only
+                                            </button>
+                                        </a>
+                                        <a style="text-decoration: none;">
+                                            <button style="display: inline;" id="threeMonthsA2" class="button button-small button-light ccenter">
+                                                C$90
+                                            </button>
+                                        </a>
+                                    </p>
+                                    <p style="text-align: center">
+                                        <a style="text-decoration: none;">
+                                            <button style="display: inline; color:white" class="button button-outline  button-small button-light ccenter">
+                                                Help an orphan with basic needs for
+                                            </button>
+                                        </a>
+                                    </p>
+                                    <a style="text-decoration: none;">
+                                        <button id="threeMonthsA1" class="button button-large button-royal ccenter">
+                                            3 Months
+                                        </button>
+                                    </a>
+
+                                </div>
+                            </ion-slide>
+                            <ion-slide>
+                                <div class="box cbox">
+                                    <p style="text-align: center">
+                                        <a style="text-decoration: none;">
+                                            <button style="display: inline; color:white" class="button button-outline button-small button-light ccenter">
+                                                With only
+                                            </button>
+                                        </a>
+                                        <a style="text-decoration: none;">
+                                            <button style="display: inline;" id="sixMonthsA2" class="button button-small button-light ccenter">
+                                                C$180
+                                            </button>
+                                        </a>
+                                    </p>
+                                    <p style="text-align: center">
+                                        <a style="text-decoration: none;">
+                                            <button style="display: inline; color:white" class="button button-outline  button-small button-light ccenter">
+                                                Help an orphan with basic needs for
+                                            </button>
+                                        </a>
+                                    </p>
+                                    <a style="text-decoration: none;">
+                                        <button id="sixMonthsA1" class="button button-large button-balanced ccenter">
+                                            6 Months
+                                        </button>
+                                    </a>
+
+                                </div>
+                            </ion-slide>
+                            <ion-slide>
+                                <div class="box cbox">
+                                    <p style="text-align: center">
+                                        <a style="text-decoration: none;">
+                                            <button style="display: inline; color:white" class="button button-outline button-small button-light ccenter">
+                                                With only
+                                            </button>
+                                        </a>
+                                        <a style="text-decoration: none;">
+                                            <button style="display: inline;" id="oneYearA2" class="button button-small button-light ccenter">
+                                                C$360
+                                            </button>
+                                        </a>
+                                    </p>
+                                    <p style="text-align: center">
+                                        <a style="text-decoration: none;">
+                                            <button style="display: inline; color:white" class="button button-outline  button-small button-light ccenter">
+                                                Help an orphan with basic needs for
+                                            </button>
+                                        </a>
+                                    </p>
+                                    <a style="text-decoration: none;">
+                                        <button id="oneYearA1" class="button button-large button-assertive ccenter">
+                                            1 Year
+                                        </button>
+                                    </a>
+
+                                </div>
+                            </ion-slide>
+                        </ion-slide-box>
+                    </div>
+
+                    <div class="row" style="background-color: #336600;  padding: 20px 20px 20px 20px; color: white; font-size: medium;">
+                        <div class="col"></div>
+                        <div class="col">
+
+                            <a class="button icon ion-heart button-assertive ccenter" style="width:200px;  z-index: 2;  text-align:center; margin: auto;" onclick="window.open('https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8ZP4RPDZBSMMN', '_system', 'location=yes');"> <b>Donate</b> with PayPal</a>
+
+
+
+                        </div>
+                        <div class="col "></div>
+                    </div>
+
+
+                    <div class="row " style="background-color: #669900;  padding: 20px 20px 20px 20px;">
+                        <div class="ccenter">
+                            <ionContent>
+                                <div style=" text-align:center; margin: auto;">
+                                    <p style="color: #E3EDD1">Donation will be processed by:</p>
+                                    <img style="padding-left: 5px; padding-right: 5px" src="assets/osp.png">
+                                </div>
+                            </ionContent>
+                        </div>
+                    </div>
+
+                    <div class="row" style="background-color: #336600;  padding: 20px 20px 20px 20px; color: white; font-size: medium">
+                        <div class="ccenter">
+                            <p>Spread the Word</p>
+                            <a href="#" style="color:white" class="button button-icon icon ion-social-facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=http%3A//commongiving.org/orphan.html', '_system', 'location=yes');"></a>
+                            <a href="#" style="color:white" class="button button-icon icon ion-social-twitter" onclick="window.open('https://twitter.com/home?status=http%3A//commongiving.org/orphan.html', '_system', 'location=yes');"></a>
+                            <a href="#" style="color:white" class="button button-icon icon ion-social-googleplus" onclick="window.open('https://plus.google.com/share?url=http%3A//commongiving.org/orphan.html', '_system', 'location=yes');"></a>
+                        </div>
+                    </div>
+
+                    <div class="row " style="background-color: #669900;  padding: 20px 20px 20px 20px; color: #E3EDD1">
+                        <div class="ccenter">
+                            <p style="text-align: center; font-size: small; opacity: 0.5">*These estimated amounts are based on the data provided by the partner organization at the time of the app shipment</p>
+                            <img style="opacity: 0.5" class="ccenter" src="assets/cg-logo.png">
+                            <p class="ccenter" style="text-align: center; font-size: small; opacity: 0.5">CommonGiving.org</p>
+                        </div>
+                    </div>
+
+                    <a class="button button-float icon-left ion-ios-arrow-left button-clear button-light" href="#/tab/home">Back</a>
+
+                </ion-content>
+            </ion-view>
+        </script>
+    </div>
+    <script id="templates/about.html" type="text/ng-template">
+        <ion-view view-title="About">
+            <ion-content class="padding">
+            </ion-content>
+        </ion-view>
+    </script>
+    <script id="templates/contact.html" type="text/ng-template">
+        <ion-view title="Contact">
+            <ion-content>
+
+
+
+
+            </ion-content>
+        </ion-view>
+    </script>
+
+</body>
+
+
+
+<script src="js/index.js"></script>
+
+
+</html>

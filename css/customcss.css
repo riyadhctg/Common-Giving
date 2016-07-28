@@ -1,0 +1,80 @@
+.ccenter{
+margin-left: auto; margin-right: auto; display: block;
+}
+
+.cpadding
+{
+	padding-left:-10px;
+	padding-right:-10px;
+}
+
+
+.noborder
+{
+	border: 0px;
+}
+
+.round-button {
+	width:25%;
+}
+.round-button-circle {
+	width: 100%;
+	height:0;
+	padding-bottom: 100%;
+    border-radius: 50%;
+	border:10px solid #cfdcec;
+    overflow:hidden;
+    
+    background: #4679BD; 
+    box-shadow: 0 0 3px gray;
+}
+.round-button {
+    display:block;
+    width:200px;
+    height:70px;
+	line-height: 55px; 
+    box-sizing: border-box; 
+    border: 2px solid #f5f5f5;
+    border-radius: 25%;
+    color:#f5f5f5;
+    text-align:center;
+    text-decoration:none;
+    background: #464646;
+    box-shadow: 0 0 3px gray;
+    font-size:20px;
+    font-weight:bold;
+}
+.round-button:hover {
+    background: #262626;
+}
+
+
+.cbox {
+   padding: 10px 10px 10px 10px;
+   padding-bottom: 50px;
+}
+
+
+.centeredSlides
+{
+    display: table;
+    margin: 0 auto;
+    
+}
+
+.slider-pager-page
+{padding-top: 20px }
+
+
+
+
+.left{
+
+  left: 0;
+}
+
+.right{
+  right: 0;
+}
+
+
